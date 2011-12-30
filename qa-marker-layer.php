@@ -44,11 +44,11 @@
 		function get_role_marker($uid,$switch) {
 			if (QA_FINAL_EXTERNAL_USERS) {
 				$user = get_userdata( $uid );
-				if (isset($user->wp_capabilities['administrator']) || isset($user->caps['administrator']) || in_array('administrator',$user->roles)) {
+				if (isset($user->wp_capabilities['administrator']) || isset($user->caps['administrator']) || isset($user->allcaps['administrator']) || in_array('administrator',$user->roles)) {
 					$level=qa_lang('users/level_admin');
 					$img = 'gold';
 				}
-				elseif (isset($user->wp_capabilities['editor']) || isset($user->caps['editor']) || in_array('editor',$user->roles)) {
+				elseif (isset($user->wp_capabilities['editor']) || isset($user->caps['editor']) || isset($user->allcaps['edit_posts']) || in_array('editor',$user->roles)) {
 					$level=qa_lang('users/level_editor');
 					$img = 'silver';
 				}
