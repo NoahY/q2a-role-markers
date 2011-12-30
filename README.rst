@@ -11,7 +11,7 @@ Features
 --------
 
 - add image overlay to avatars
-- add text before name in user_meta
+- add text label before name in user_meta and users list
 - specify type of post to add to
 - hover text shows role
 - css customizable via admin/plugins
