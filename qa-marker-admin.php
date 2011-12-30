@@ -21,6 +21,7 @@
 	font-size: 200%;
 	margin-right: 2px;
 	vertical-align: sub;
+	line-height: 50%;
 }
 .qa-who-marker-bronze {
 	color: #CB9114;
@@ -58,6 +59,7 @@
 				qa_opt('marker_plugin_a_a',(bool)qa_post_text('marker_plugin_a_a'));
 				qa_opt('marker_plugin_a_c',(bool)qa_post_text('marker_plugin_a_c'));
 
+				qa_opt('marker_plugin_w_users',(bool)qa_post_text('marker_plugin_w_users'));
 				qa_opt('marker_plugin_w_qv',(bool)qa_post_text('marker_plugin_w_qv'));
 				qa_opt('marker_plugin_w_qi',(bool)qa_post_text('marker_plugin_w_qi'));
 				qa_opt('marker_plugin_w_a',(bool)qa_post_text('marker_plugin_w_a'));
@@ -158,6 +160,12 @@
 				'label' => 'Show markers before names in comments',
 				'tags' => 'NAME="marker_plugin_w_c"',
 				'value' => qa_opt('marker_plugin_w_c'),
+				'type' => 'checkbox',
+			);
+			$fields[] = array(
+				'label' => 'Show markers before names in users list',
+				'tags' => 'NAME="marker_plugin_w_users"',
+				'value' => qa_opt('marker_plugin_w_users'),
 				'type' => 'checkbox',
 			);
 			

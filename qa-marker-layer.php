@@ -38,21 +38,31 @@
 
 			qa_html_theme_base::post_meta($post, $class, $prefix, $separator);
 		}
-		
+		function ranking_label($item, $class)
+		{
+			if(qa_opt('marker_plugin_w_users') && $class == 'qa-top-users') {
+				$handle = strip_tags($item['label']);
+				$uid = $this->getuserfromhandle($handle);
+				$image = $this->get_role_marker($uid,2);
+				$item['label'] = $image.$item['label'];
+			}
+			qa_html_theme_base::ranking_label($item, $class);
+		}
+				
 	// worker
 		
 		function get_role_marker($uid,$switch) {
 			if (QA_FINAL_EXTERNAL_USERS) {
 				$user = get_userdata( $uid );
-				if (isset($user->wp_capabilities['administrator']) || isset($user->caps['administrator']) || isset($user->allcaps['administrator']) || in_array('administrator',$user->roles)) {
+				if (isset($user->wp_capabilities['administrator']) || isset($user->caps['administrator']) || isset($user->allcaps['administrator']) || (is_array($user->roles) && in_array('administrator',$user->roles))) {
 					$level=qa_lang('users/level_admin');
 					$img = 'gold';
 				}
-				elseif (isset($user->wp_capabilities['editor']) || isset($user->caps['editor']) || isset($user->allcaps['edit_posts']) || in_array('editor',$user->roles)) {
+				elseif (isset($user->wp_capabilities['editor']) || isset($user->caps['editor']) || isset($user->allcaps['edit_posts']) || (is_array($user->roles) && in_array('editor',$user->roles))) {
 					$level=qa_lang('users/level_editor');
 					$img = 'silver';
 				}
-				elseif (isset($user->wp_capabilities['contributor']) || isset($user->caps['contributor']) || in_array('contributor',$user->roles)) {
+				elseif (isset($user->wp_capabilities['contributor']) || isset($user->caps['contributor']) || (is_array($user->roles) && in_array('contributor',$user->roles))) {
 					$level=qa_lang('users/level_expert');
 					$img = 'bronze';
 				}
