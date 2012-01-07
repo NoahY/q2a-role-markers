@@ -58,7 +58,7 @@
 					$level=qa_lang('users/level_admin');
 					$img = 'gold';
 				}
-				elseif (isset($user->wp_capabilities['editor']) || isset($user->caps['editor']) || isset($user->allcaps['edit_posts']) || (is_array($user->roles) && in_array('editor',$user->roles))) {
+				elseif (isset($user->wp_capabilities['editor']) || isset($user->caps['editor']) || (is_array($user->roles) && in_array('editor',$user->roles))) {
 					$level=qa_lang('users/level_editor');
 					$img = 'silver';
 				}
