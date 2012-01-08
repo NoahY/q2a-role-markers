@@ -78,7 +78,6 @@
 					true
 				);
 				$level = qa_user_level_string($levelno);
-				error_log($level);
 				if ($level == qa_lang('users/level_admin') || $level == qa_lang('users/level_super'))
 					$img = 'gold';
 				elseif ($level == qa_lang('users/level_editor'))
