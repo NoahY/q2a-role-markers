@@ -83,11 +83,13 @@
 				);
 				$level = qa_user_level_string($levelno);
 				if ($level == qa_lang('users/level_admin') || $level == qa_lang('users/level_super'))
-					$img = 'gold';
+					$img = 'admin';
+				elseif ($level == qa_lang('users/level_moderator'))
+					$img = 'moderator';
 				elseif ($level == qa_lang('users/level_editor'))
-					$img = 'silver';
+					$img = 'editor';
 				elseif ($level == qa_lang('users/level_expert'))
-					$img = 'bronze';
+					$img = 'expert';
 				else
 					return; 
 			}
