@@ -5,7 +5,7 @@
         Plugin URI: https://github.com/NoahY/q2a-roles
         Plugin Update Check URI: https://github.com/NoahY/q2a-roles/master/qa-plugin.php
         Plugin Description: Adds role markers to avatars and usernames
-        Plugin Version: 1
+        Plugin Version: 1.1
         Plugin Date: 2011-12-29
         Plugin Author: NoahY
         Plugin Author URI: 

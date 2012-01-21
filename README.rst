@@ -10,7 +10,7 @@ This is a plugin for **Question2Answer** that adds markers for special roles.
 Features
 --------
 
-- add image overlay to avatars
+- add image overlay to avatars for admin, mod, editor, and experts
 - add text label before name in user_meta and users list
 - specify type of post to add to
 - hover text shows role
