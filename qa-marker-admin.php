@@ -11,7 +11,7 @@
 			switch($option) {
 				case 'marker_plugin_who_text':
 					return '&diams;';
-				case 'marker_plugin_css':
+				case 'marker_plugin_css_2':
 					return '
 .qa-q-item-avatar,.qa-q-view-avatar,.qa-a-item-avatar,.qa-c-item-avatar {
 	position:relative;
@@ -23,13 +23,16 @@
 	vertical-align: sub;
 	line-height: 50%;
 }
-.qa-who-marker-bronze {
+.qa-who-marker-expert {
+	color: #4D90FE;
+}				
+.qa-who-marker-editor {
 	color: #CB9114;
 }				
-.qa-who-marker-silver {
+.qa-who-marker-moderator {
 	color: #CDCDCD;
 }				
-.qa-who-marker-gold {
+.qa-who-marker-admin {
 	color: #EEDD0F;
 }				
 .qa-avatar-marker {
@@ -50,7 +53,7 @@
 
 			$ok = null;
 			if (qa_clicked('marker_save_button')) {
-				qa_opt('marker_plugin_css',qa_post_text('marker_plugin_css'));
+				qa_opt('marker_plugin_css_2',qa_post_text('marker_plugin_css_2'));
 				qa_opt('marker_plugin_who_text',qa_post_text('marker_plugin_who_text'));
 
 
@@ -94,8 +97,8 @@
 
 			$fields[] = array(
 				'label' => 'Marker custom css',
-				'tags' => 'NAME="marker_plugin_css"',
-				'value' => qa_opt('marker_plugin_css'),
+				'tags' => 'NAME="marker_plugin_css_2"',
+				'value' => qa_opt('marker_plugin_css_2'),
 				'type' => 'textarea',
 				'rows' => 20
 			);

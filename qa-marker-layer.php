@@ -7,7 +7,7 @@
 			
 			$this->output('
 <style>
-'.qa_opt('marker_plugin_css').'				
+'.qa_opt('marker_plugin_css_2').'				
 </style>');
 		}
 
@@ -56,15 +56,19 @@
 				$user = get_userdata( $uid );
 				if (isset($user->wp_capabilities['administrator']) || isset($user->caps['administrator']) || isset($user->allcaps['administrator'])) {
 					$level=qa_lang('users/level_admin');
-					$img = 'gold';
+					$img = 'admin';
+				}
+				elseif (isset($user->wp_capabilities['moderator']) || isset($user->caps['moderator'])) {
+					$level=qa_lang('users/level_moderator');
+					$img = 'moderator';
 				}
 				elseif (isset($user->wp_capabilities['editor']) || isset($user->caps['editor'])) {
 					$level=qa_lang('users/level_editor');
-					$img = 'silver';
+					$img = 'editor';
 				}
 				elseif (isset($user->wp_capabilities['contributor']) || isset($user->caps['contributor'])) {
 					$level=qa_lang('users/level_expert');
-					$img = 'bronze';
+					$img = 'expert';
 				}
 				else
 					return;
